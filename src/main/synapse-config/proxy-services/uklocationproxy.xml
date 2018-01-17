@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="uklocationproxy" startOnLoad="true" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <endpoint name="endpoint_urn_uuid_06ccba8b-3ce6-406a-8f7c-7710cc2ed3ae">
+            <address uri="http://www.webservicex.net/uklocation.asmx"/>
+        </endpoint>
+        <inSequence>
+            <log description="">
+                <property name="MESSAGE" value="Calling External UK Location .Net Web Service"/>
+            </log>
+            <header name="Action" scope="default" value="http://www.webserviceX.NET/GetUKLocationByTown"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>
