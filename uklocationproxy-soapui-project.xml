@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5eba3bf7-a503-47f5-8b11-02e6e621c915" activeEnvironment="Default" name="uklocationproxy" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="229a5db1-4ba0-4423-8bc1-1d65cba156cf" wsaVersion="NONE" name="uklocationproxySoap11Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}uklocationproxySoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8280/services/uklocationproxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8280/services/uklocationproxy?wsdl"><con:part><con:url>http://localhost:8280/services/uklocationproxy?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.apache.org/axis2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types/>
+  <wsdl:message name="in"/>
+  <wsdl:message name="out"/>
+  <wsdl:portType name="uklocationproxyPortType">
+    <wsdl:operation name="mediate">
+      <wsdl:input message="tns:in" wsaw:Action="urn:mediate"/>
+      <wsdl:output message="tns:out" wsaw:Action="urn:mediateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="uklocationproxySoap11Binding" type="tns:uklocationproxyPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="uklocationproxySoap12Binding" type="tns:uklocationproxyPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap12:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="uklocationproxyHttpBinding" type="tns:uklocationproxyPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="mediate">
+      <http:operation location="mediate"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="uklocationproxy">
+    <wsdl:port name="uklocationproxyHttpSoap11Endpoint" binding="tns:uklocationproxySoap11Binding">
+      <soap:address location="http://localhost:8280/services/uklocationproxy.uklocationproxyHttpSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="uklocationproxyHttpsSoap11Endpoint" binding="tns:uklocationproxySoap11Binding">
+      <soap:address location="https://localhost:8243/services/uklocationproxy.uklocationproxyHttpsSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="uklocationproxyHttpSoap12Endpoint" binding="tns:uklocationproxySoap12Binding">
+      <soap12:address location="http://localhost:8280/services/uklocationproxy.uklocationproxyHttpSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="uklocationproxyHttpsSoap12Endpoint" binding="tns:uklocationproxySoap12Binding">
+      <soap12:address location="https://localhost:8243/services/uklocationproxy.uklocationproxyHttpsSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="uklocationproxyHttpEndpoint" binding="tns:uklocationproxyHttpBinding">
+      <http:address location="http://localhost:8280/services/uklocationproxy.uklocationproxyHttpEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="uklocationproxyHttpsEndpoint" binding="tns:uklocationproxyHttpBinding">
+      <http:address location="https://localhost:8243/services/uklocationproxy.uklocationproxyHttpsEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8280/services/uklocationproxy.uklocationproxyHttpSoap11Endpoint</con:endpoint><con:endpoint>https://localhost:8243/services/uklocationproxy.uklocationproxyHttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation id="75516f6f-7429-44f0-ac92-b1caf79b41f3" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bc7e61a2-1376-4430-b2c1-6679262e5861" name="GetUKLocationByTown Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/uklocationproxy.uklocationproxyHttpSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetUKLocationByTown>
+         <!--Optional:-->
+         <web:Town>High Wycombe</web:Town>
+      </web:GetUKLocationByTown>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
